@@ -1,0 +1,188 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-window{
+  text-align: center;
+}
+
+.welcome-window h1{
+  margin-top: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+}
+
+button{
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+  font-style: oblique;
+  color: white;
+  background-color: hsl(125, 50%, 50%);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  box-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.45);
+}
+
+button:hover{
+  background-color: hsl(125, 50%, 40%);
+}
+
+button:active{
+  background-color: hsl(125, 50%, 30%);
+}
+
+.welcome-window button{
+  font-size: 3rem;
+  margin-top: 50px;
+  padding: 10px;
+  min-width: 300px;
+  border-radius: 25px;
+}
+
+.player-info-window{
+  margin: auto;
+  margin-top: 250px;
+  font-family: monospace;
+  font-size: 4rem;
+  text-align: center;
+  display: none;
+}
+
+.player-info-window input{
+  margin-top: 25px;
+  font-family: monospace;
+  font-style: oblique;
+  padding: 10px;
+  font-size: 3rem;
+  width: 300px;
+  color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.player-info-window button{
+  margin-top: 50px;
+  padding: 10px;
+  font-size: 2rem;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.game-window{
+  font-family: monospace;
+  font-size: 2rem;
+  text-align: center;
+  display: none;
+}
+
+.game-window span{
+  color: hsl(0, 0%, 25%);
+}
+
+.game-element-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-card{
+  float: left;
+  margin-left: 50px;
+  width: 25%;
+  overflow: hidden;
+}
+
+.computer-card{
+  float: right;
+  margin-right: 50px;
+  width: 25%;
+  overflow: hidden;
+}
+
+.grid{
+  float: left;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 500px;
+  height: 500px;
+  background-color: hsl(0, 0%, 75%);
+  border-radius: 5px;
+}
+
+.box{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 5rem;
+  width: 100%;
+  aspect-ratio: 1;
+  font-weight: lighter;
+  background-color: hsla(0, 0%, 0%, 0.75);
+  border-radius: 5px;
+  display: block;
+}
+
+.box:hover{
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.box:active{
+  background-color: hsl(0, 0%, 0%, 0.4);
+}
+
+#player-turn{
+  font-size: 1.5rem;
+  display: none;
+  background-color: hsl(200, 100%, 50%);
+  width: 250px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 2px 2px 2px black;
+}
+
+#computer-turn{
+  font-size: 1.5rem;
+  display: none;
+  background-color: hsl(0, 100%, 50%);
+  width: 250px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 2px 2px 2px black;
+}
+
+#gameResultWindow{
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 50px;
+  border: none;
+  border-radius: 20px;
+  width: 400px;
+  padding: 20px;
+  background-color: hsl(0, 0%, 95%);
+}
+
+#gameResultWindow button{
+  display: inline;
+  font-size: 2rem;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+#gameResultWindow #quit{
+  background-color: hsl(0, 100%, 60%);
+}
+
+#gameResultWindow #quit:hover{
+  background-color: hsl(0, 100%, 45%);
+}
+
+#gameResultWindow #quit:active{
+  background-color: hsl(0, 100%, 40%);
+}
