@@ -95,12 +95,69 @@ function Game() {
                 }
             });
 
-            const random = Math.floor(Math.random() * freeBoxIndices.length);
-
+            const selectedIndex = analyzeSpace(freeBoxIndices);
             resolve(setTimeout(() => {
-                updateSpace(freeBoxIndices[random]);
+                updateSpace(selectedIndex);
             }, 1000));
         });       
+    }
+
+    function analyzeSpace(freeBoxIndices) {
+
+        if (space[0] === null && space[1] === "O" && space[2] === "O") return 0;
+        else if (space[0] === "O" && space[1] === null && space[2] === "O") return 1;
+        else if (space[0] === "O" && space[1] === "O" && space[2] === null) return 2;
+        else if (space[3] === null && space[4] === "O" && space[5] === "O") return 3;
+        else if (space[3] === "O" && space[4] === null && space[5] === "O") return 4;
+        else if (space[3] === "O" && space[4] === "O" && space[5] === null) return 5;
+        else if (space[6] === null && space[7] === "O" && space[8] === "O") return 6;
+        else if (space[6] === "O" && space[7] === null && space[8] === "O") return 7;
+        else if (space[6] === "O" && space[7] === "O" && space[8] === null) return 8;
+        else if (space[0] === null && space[3] === "O" && space[6] === "O") return 0;
+        else if (space[0] === "O" && space[3] === null && space[6] === "O") return 3;
+        else if (space[0] === "O" && space[3] === "O" && space[6] === null) return 6;
+        else if (space[1] === null && space[4] === "O" && space[7] === "O") return 1;
+        else if (space[1] === "O" && space[4] === null && space[7] === "O") return 4;
+        else if (space[1] === "O" && space[4] === "O" && space[7] === null) return 7;
+        else if (space[2] === null && space[5] === "O" && space[8] === "O") return 2;
+        else if (space[2] === "O" && space[5] === null && space[8] === "O") return 5;
+        else if (space[2] === "O" && space[5] === "O" && space[8] === null) return 8;
+        else if (space[0] === null && space[4] === "O" && space[8] === "O") return 0;
+        else if (space[0] === "O" && space[4] === null && space[8] === "O") return 4;
+        else if (space[0] === "O" && space[4] === "O" && space[8] === null) return 8;
+        else if (space[2] === null && space[4] === "O" && space[6] === "O") return 2;
+        else if (space[2] === "O" && space[4] === null && space[6] === "O") return 4;
+        else if (space[2] === "O" && space[4] === "O" && space[6] === null) return 6;
+
+        if (space[0] === null && space[1] === "X" && space[2] === "X") return 0;
+        else if (space[0] === "X" && space[1] === null && space[2] === "X") return 1;
+        else if (space[0] === "X" && space[1] === "X" && space[2] === null) return 2;
+        else if (space[3] === null && space[4] === "X" && space[5] === "X") return 3;
+        else if (space[3] === "X" && space[4] === null && space[5] === "X") return 4;
+        else if (space[3] === "X" && space[4] === "X" && space[5] === null) return 5;
+        else if (space[6] === null && space[7] === "X" && space[8] === "X") return 6;
+        else if (space[6] === "X" && space[7] === null && space[8] === "X") return 7;
+        else if (space[6] === "X" && space[7] === "X" && space[8] === null) return 8;
+        else if (space[0] === null && space[3] === "X" && space[6] === "X") return 0;
+        else if (space[0] === "X" && space[3] === null && space[6] === "X") return 3;
+        else if (space[0] === "X" && space[3] === "X" && space[6] === null) return 6;
+        else if (space[1] === null && space[4] === "X" && space[7] === "X") return 1;
+        else if (space[1] === "X" && space[4] === null && space[7] === "X") return 4;
+        else if (space[1] === "X" && space[4] === "X" && space[7] === null) return 7;
+        else if (space[2] === null && space[5] === "X" && space[8] === "X") return 2;
+        else if (space[2] === "X" && space[5] === null && space[8] === "X") return 5;
+        else if (space[2] === "X" && space[5] === "X" && space[8] === null) return 8;
+        else if (space[0] === null && space[4] === "X" && space[8] === "X") return 0;
+        else if (space[0] === "X" && space[4] === null && space[8] === "X") return 4;
+        else if (space[0] === "X" && space[4] === "X" && space[8] === null) return 8;
+        else if (space[2] === null && space[4] === "X" && space[6] === "X") return 2;
+        else if (space[2] === "X" && space[4] === null && space[6] === "X") return 4;
+        else if (space[2] === "X" && space[4] === "X" && space[6] === null) return 6;
+
+        if (space[4] === null) return 4;
+
+        const random = Math.floor(Math.random() * freeBoxIndices.length);
+        return freeBoxIndices[random];
     }
 
     function humanPlay(index) {
