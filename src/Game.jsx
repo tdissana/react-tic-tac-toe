@@ -301,7 +301,7 @@ function Game() {
     }
 
     return(
-        <>
+        <div className="container">
             <div className="welcome-window">
                 <h1>Welcome to Tic-Tac-Toe</h1>
                 <button onClick={startGame}>Start Game</button>
@@ -352,7 +352,7 @@ function Game() {
                 </div>
 
             </div>
-        </>
+        </div>
     );
 }
 

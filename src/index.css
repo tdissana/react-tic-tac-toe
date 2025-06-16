@@ -186,3 +186,61 @@ button:active{
 #gameResultWindow #quit:active{
   background-color: hsl(0, 100%, 40%);
 }
+
+@media (max-width: 600px) {
+
+  .player-info-window {
+    font-size: 2.5rem;
+    margin-top: 80px;
+  }
+
+  .player-info-window input {
+    width: 90%;
+    font-size: 2rem;
+  }
+
+  .player-info-window button {
+    width: 70%;
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .game-element-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-card,
+  .computer-card {
+    float: none;
+    margin: 10px auto;
+    width: 80%;
+  }
+
+  .grid {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .box {
+    font-size: 3rem;
+  }
+
+  #player-turn,
+  #computer-turn {
+    font-size: 1.2rem;
+    width: 80%;
+  }
+
+  #gameResultWindow {
+    width: 90%;
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  #gameResultWindow button {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
